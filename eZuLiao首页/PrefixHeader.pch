@@ -1,0 +1,41 @@
+
+
+#import "AppDelegate.h"
+//第三方
+#import "KVNProgress.h"
+#import "UIImageView+WebCache.h"
+#import "AFNetworking.h"
+//自定义
+#import "MyTitleLabel.h"
+#import "MyBackBut.h"
+#import "PhoneNoIsOrNo.h"
+#import "MyVisual.h"
+#import "UIView+HUAnimation.h"
+
+#ifndef eZuLiao___PrefixHeader_pch
+#define eZuLiao___PrefixHeader_pch
+
+
+#define XWIDTH [UIScreen mainScreen].bounds.size.width
+#define YHEIGHT self.view.frame.size.height
+
+#define API_MAIN @"http://www.ezuliao.com/Api/Info/getAllType"//e足疗主界面接口
+#define JSON_PATH [[NSBundle mainBundle]pathForResource:@"reserveJSON" ofType:@"json"]
+
+#define API_ORDER @"http://www.ezuliao.com/Api/User/order?phone=%@&access_token=%@"//订单接口
+
+#define APT_COUPON @"http://www.ezuliao.com/Api/User/coupon?access_token=%@&phone=%@"//优惠劵接口
+#define APT_PROCOM @"http://www.ezuliao.com/Api/Info/getProductComment?typeid=%d&page=1"
+#define API_VerifyCode @"http://www.ezuliao.com/Api/Info/verifycode?phone=%@"//手机发送消息获取验证码
+#define API_CheckVC @"http://www.ezuliao.com/Api/Info/checkverifycode?phone=%@&verifycode=%@&clientid=1f96f8f6276eb081fc7191f2f829f244&device=2"//验证码校验
+#define API_Submit  @"http://www.ezuliao.com/Api/Order/submit"//post订单
+#define API_Cancel   @"http://www.ezuliao.com/Api/Order/cancelOrder?phone=%@&access_token=%@&order_number=%@"//取消订单接口
+#define APT_BindCoupon @"http://www.ezuliao.com/Api/User/bindCoupon"//兑换优惠劵接口
+#define API_SubmitComment @"http://www.ezuliao.com/Api/User/submitComment"//post评论
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d  \t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+
+#endif
